@@ -28,12 +28,12 @@ public class EmpresaService {
 
     public Empresa buscarEmpresaPorId(UUID id){
         return empresaRepository.findById(id).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Id não encontrado!" + id));
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Id não encontrado! " + id));
     }
 
     public Empresa buscarEmpresaPorEmail(String email){
         return empresaRepository.findByEmail(email).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Email não encontrado!" + email));
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Email não encontrado! " + email));
     }
 
     public void deletarEmpresaPorId(UUID id){
