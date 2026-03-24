@@ -1,10 +1,7 @@
 package com.fabianesilva.estoque_material.infrastructure.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
@@ -18,13 +15,14 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Estoque {
+@Builder
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private String produto;
+    private String nomeProduto;
     private String descricao;
     private String unidadeMedida;
     private Integer qtdeAtual;
